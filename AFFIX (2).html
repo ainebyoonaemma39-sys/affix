@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AFFIX</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+:root{
+  --red:#F0233D; --red-d:#c81c33;
+  --bg:#0B0B0E; --card:#17171C; --card2:#1F1F26; --line:#2A2A31;
+  --text:#F4F4F6; --muted:#9A9AA4; --nav-h:64px;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+:root:not([data-theme="light"]){ }
+:root[data-theme="light"]{
+  --bg:#FAFAFB; --card:#FFFFFF; --card2:#F1F1F4; --line:#E7E7EC; --text:#151519; --muted:#7A7A85;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;overflow:hidden}
+h1,h2,h3,.brand{font-family:'Space Grotesk',sans-serif}
+button{font-family:inherit;border:none;background:none;color:inherit;cursor:pointer}
+img,svg{display:block}
+::-webkit-scrollbar{width:0;height:0}
+#app{height:100vh;height:100dvh;display:flex;flex-direction:column;max-width:520px;margin:0 auto;position:relative;background:var(--bg)}
+
+/* ---------- LOGO ---------- */
+.logo{display:flex;align-items:center;gap:8px}
+.logo img{width:26px;height:26px;border-radius:6px}
+.logo span{font-weight:700;font-size:19px;letter-spacing:0.5px}
+
+/* ---------- HEADER ---------- */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top,0px));position:sticky;top:0;z-index:5;background:linear-gradient(var(--bg),var(--bg))}
+.topbar.overlay{position:absolute;width:100%;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent);color:#fff}
+.topbar.overlay .logo span{color:#fff}
+.iconbtn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:18px}
+.tabs{display:flex;gap:22px;padding:0 16px 10px;font-family:'Space Grotesk',sans-serif;font-weight:600;color:var(--muted);font-size:15px}
+.tabs .active{color:var(--text)}
+.tabs.overlay{position:absolute;top:52px;width:100%;justify-content:center;gap:26px;color:rgba(255,255,255,.65);z-index:5}
+.tabs.overlay .active{color:#fff}
+
+/* ---------- VIEWS ---------- */
+.view{flex:1;overflow-y:auto;overflow-x:hidden;display:none;-webkit-overflow-scrolling:touch}
+.view.active{display:block}
+.pad{padding:16px}
+
+/* ---------- HOME FEED ---------- */
+#feed{height:100%;overflow-y:scroll;scroll-snap-type:y mandatory}
+.reel{height:100%;scroll-snap-align:start;position:relative;display:flex;align-items:flex-end}
+.thumb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;transition:filter .3s}
+.playicon{font-size:54px;color:rgba(255,255,255,.9);opacity:0;transition:opacity .2s}
+.reel.paused .playicon{opacity:1}
+.reel.playing .thumb{animation:drift 6s ease-in-out infinite alternate}
+@keyframes drift{from{transform:scale(1)}to{transform:scale(1.06)}}
+.meta{position:relative;z-index:2;padding:14px 70px 90px 16px;color:#fff;width:100%;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent 70%)}
+.meta .user{display:flex;align-items:center;gap:8px;font-weight:600;margin-bottom:6px}
+.avatar{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;color:#fff;flex-shrink:0}
+.followchip{font-size:12px;border:1px solid #fff;border-radius:20px;padding:2px 9px;margin-left:6px}
+.followchip.on{background:var(--red);border-color:var(--red)}
+.caption{font-size:14px;line-height:1.4;margin-bottom:4px}
+.tags{font-size:13px;color:#ffd7dc;font-weight:500}
+.sidebar{position:absolute;right:10px;bottom:100px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:18px;color:#fff}
+.sidebar button{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;font-weight:600}
+.sidebar .ic{font-size:26px}
+.sidebar .liked{color:var(--red)}
+.sidebar .saved{color:#ffce3a}
+
+/* ---------- BOTTOM NAV ---------- */
+#nav{display:flex;align-items:center;justify-content:space-around;height:var(--nav-h);padding-bottom:env(safe-area-inset-bottom,0px);background:var(--card);border-top:1px solid var(--line);position:relative;z-index:6;flex-shrink:0}
+.navbtn{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;font-weight:600;color:var(--muted);flex:1;min-width:0;position:relative}
+.navbtn.active{color:var(--red)}
+.navbtn .ic{font-size:21px}
+.navbtn .badge{position:absolute;top:-2px;right:8px;background:var(--red);color:#fff;font-size:9px;border-radius:10px;padding:1px 5px;font-weight:700}
+.createbtn{width:46px;height:46px;border-radius:14px;background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;margin-top:-14px;box-shadow:0 6px 16px rgba(240,35,61,.4)}
+
+/* ---------- CARDS / COMMON ---------- */
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+.h2{font-size:20px;font-weight:700;margin-bottom:12px}
+.muted{color:var(--muted);font-size:13px}
+.pill{border-radius:20px;padding:7px 16px;font-weight:600;font-size:13px}
+.pill.red{background:var(--red);color:#fff}
+.pill.outline{border:1px solid var(--line);color:var(--text)}
+.searchbar{display:flex;align-items:center;gap:8px;background:var(--card2);border-radius:12px;padding:10px 14px;color:var(--muted);font-size:14px}
+.searchbar input{background:none;border:none;color:var(--text);font-size:14px;flex:1;outline:none}
+
+/* ---------- COMMUNITY ---------- */
+.commgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.commcard{border-radius:16px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.commcover{height:70px}
+.commbody{padding:10px 12px}
+.commbody .name{font-weight:700;font-size:14px;margin-bottom:2px}
+.commbody .desc{font-size:12px;color:var(--muted);margin-bottom:8px;min-height:30px}
+.commbody .row{display:flex;justify-content:space-between;align-items:center}
+
+/* ---------- UPDATES ---------- */
+.notif{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.notif.unread{background:rgba(240,35,61,.06);border-radius:10px;padding:12px 10px}
+.nic{width:36px;height:36px;border-radius:50%;background:var(--card2);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.sectionlabel{font-weight:700;font-size:13px;color:var(--muted);margin:16px 0 4px;text-transform:none}
+
+/* ---------- PROFILE ---------- */
+.pheader{display:flex;flex-direction:column;align-items:center;padding:20px 16px;text-align:center}
+.pavatar{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:700;color:#fff;margin-bottom:10px}
+.stats{display:flex;gap:26px;margin:14px 0}
+.stats div{text-align:center}
+.stats b{display:block;font-size:16px}
+.stats span{font-size:12px;color:var(--muted)}
+.ptabs{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ptabs button{flex:1;padding:11px;font-weight:600;font-size:13px;color:var(--muted);border-bottom:2px solid transparent}
+.ptabs button.active{color:var(--text);border-color:var(--red)}
+.vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:3px}
+.vgrid .cell{aspect-ratio:9/13;position:relative;display:flex;align-items:flex-end;padding:6px;font-size:10px;color:#fff;font-weight:600}
+.vgrid .cell span{background:rgba(0,0,0,.35);padding:1px 5px;border-radius:6px}
+
+/* ---------- CREATE ---------- */
+.dropzone{border:2px dashed var(--line);border-radius:16px;padding:34px 16px;text-align:center;color:var(--muted);margin-bottom:16px}
+.field{margin-bottom:14px}
+.field label{font-size:12px;font-weight:600;color:var(--muted);display:block;margin-bottom:6px}
+.field input[type=text],.field textarea,.field select{width:100%;background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;color:var(--text);font-size:14px;font-family:inherit}
+.field textarea{min-height:70px;resize:vertical}
+.progresswrap{height:6px;background:var(--card2);border-radius:6px;overflow:hidden;margin:10px 0}
+.progressbar{height:100%;background:var(--red);width:0%;transition:width .1s linear}
+
+/* ---------- MODAL / OVERLAYS ---------- */
+.modal{position:absolute;inset:0;background:var(--bg);z-index:20;display:none;flex-direction:column}
+.modal.open{display:flex}
+.modalhead{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.modalhead h3{font-size:16px}
+.toast{position:absolute;bottom:calc(var(--nav-h) + 16px);left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:10px 18px;border-radius:30px;font-size:13px;font-weight:600;z-index:30;opacity:0;transition:opacity .3s,bottom .3s;pointer-events:none}
+.toast.show{opacity:1;bottom:calc(var(--nav-h) + 30px)}
+.empty{text-align:center;padding:40px 20px;color:var(--muted)}
+
+/* ---------- AUTH ---------- */
+#auth{position:fixed;inset:0;background:var(--bg);z-index:50;display:flex;flex-direction:column;max-width:520px;margin:0 auto;padding:0 28px;padding-top:calc(60px + env(safe-area-inset-top,0px));padding-bottom:calc(30px + env(safe-area-inset-bottom,0px))}
+#auth.hidden{display:none}
+.authlogo{display:flex;flex-direction:column;align-items:center;gap:14px;margin-bottom:34px}
+.authlogo img{width:52px;height:52px;border-radius:14px}
+.authlogo .brand{font-size:26px;font-weight:700}
+.authtabs{display:flex;background:var(--card2);border-radius:12px;padding:4px;margin-bottom:22px}
+.authtabs button{flex:1;padding:9px;border-radius:9px;font-weight:600;font-size:14px;color:var(--muted)}
+.authtabs button.active{background:var(--red);color:#fff}
+.authform .field input{padding:12px 14px}
+.autherr{color:var(--red);font-size:12.5px;min-height:16px;margin:-6px 0 8px}
+.authsub{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+.authsub b{color:var(--text);cursor:pointer}
+.guestbtn{text-align:center;margin-top:10px;color:var(--muted);font-size:13px;text-decoration:underline}
+
+@media (min-width:760px){
+  #app{max-width:1100px;flex-direction:row;border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  #nav{flex-direction:column;height:100%;width:220px;justify-content:flex-start;padding-top:20px;gap:6px;border-top:none;border-right:1px solid var(--line)}
+  .navbtn{flex-direction:row;flex:none;width:100%;justify-content:flex-start;gap:12px;padding:10px 18px;font-size:14px}
+  .navbtn .ic{font-size:20px}
+  .createbtn{margin:8px 18px;border-radius:12px;width:calc(100% - 36px);height:44px}
+  #main{flex:1;display:flex;flex-direction:column;overflow:hidden}
+  .view{overflow-y:auto}
+  #feed{max-width:420px;margin:0 auto;border-radius:20px;height:94%;margin-top:2%}
+}
+</style>
+</head>
+<body>
+
+<div id="auth">
+  <div class="authlogo">
+    <img src="data:image/png;base64,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" alt="AFFIX logo">
+    <span class="brand">AFFIX</span>
+  </div>
+  <div class="authtabs">
+    <button id="tabLogin" class="active" onclick="setAuthTab('login')">Log in</button>
+    <button id="tabSignup" onclick="setAuthTab('signup')">Sign up</button>
+  </div>
+  <div class="authform">
+    <div class="field" id="fieldName" style="display:none"><label>Display name</label><input type="text" id="authName" placeholder="Jordan Ade"></div>
+    <div class="field" id="fieldUser" style="display:none"><label>Username</label><input type="text" id="authUser" placeholder="jordan.ade"></div>
+    <div class="field"><label>Email</label><input type="text" id="authEmail" placeholder="you@example.com"></div>
+    <div class="field"><label>Password</label><input type="password" id="authPass" placeholder="••••••••"></div>
+    <div class="autherr" id="authErr"></div>
+    <button class="pill red" style="width:100%;padding:13px" id="authSubmit" onclick="submitAuth()">Log in</button>
+  </div>
+  <div class="authsub" id="authSwitch">New to AFFIX? <b onclick="setAuthTab('signup')">Sign up</b></div>
+  <div class="guestbtn" onclick="enterApp()">Continue as guest</div>
+</div>
+
+<div id="app" style="display:none">
+<div id="main" style="flex:1;display:flex;flex-direction:column;overflow:hidden;position:relative;min-width:0">
+
+  <!-- HOME -->
+  <div class="view active" id="view-home" style="position:relative">
+    <div class="topbar overlay">
+      <div class="logo">
+        <img src="data:image/png;base64,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" alt="AFFIX logo">
+        <span class="brand">AFFIX</span>
+      </div>
+      <button class="iconbtn" onclick="openSearch()">🔍</button>
+    </div>
+    <div class="tabs overlay" id="feedtabs">
+      <div class="active" data-feed="foryou" onclick="setFeedTab('foryou')">For You</div>
+      <div data-feed="following" onclick="setFeedTab('following')">Following</div>
+    </div>
+    <div id="feed"></div>
+  </div>
+
+  <!-- COMMUNITY -->
+  <div class="view" id="view-community"><div class="pad">
+    <div class="h2">Community</div>
+    <div class="searchbar"><span>🔍</span><input placeholder="Search communities" oninput="filterCommunities(this.value)"></div>
+    <div class="sectionlabel">Popular</div>
+    <div class="commgrid" id="commgrid"></div>
+  </div></div>
+
+  <!-- CREATE -->
+  <div class="view" id="view-create"><div class="pad">
+    <div class="h2">Create</div>
+    <input type="file" id="fileInput" accept="video/*" style="display:none" onchange="onFileChosen(event)">
+    <div class="dropzone" id="dropzone" onclick="document.getElementById('fileInput').click()">
+      <div style="font-size:30px;margin-bottom:8px" id="dzIcon">🎬</div>
+      <div id="dzText">Tap to record or upload a video</div>
+      <div class="muted" style="margin-top:4px;font-size:12px">MP4/MOV, up to 10 min</div>
+    </div>
+    <div class="field"><label>Caption</label><textarea id="capInput" placeholder="Say something about your video..."></textarea></div>
+    <div class="field"><label>Hashtags</label><input type="text" id="tagInput" placeholder="#affix, #trending"></div>
+    <div class="field"><label>Tag a community</label><select id="commSelect"></select></div>
+    <div class="field"><label>Mention users</label><input type="text" id="mentionInput" placeholder="@username"></div>
+    <div class="field"><label>Who can view this</label><select id="visSelect"><option>Public</option><option>Followers only</option><option>Only me</option></select></div>
+    <div class="progresswrap" id="progWrap" style="display:none"><div class="progressbar" id="progBar"></div></div>
+    <button class="pill red" style="width:100%;padding:12px" onclick="publishVideo()">Publish</button>
+  </div></div>
+
+  <!-- UPDATES -->
+  <div class="view" id="view-updates"><div class="pad">
+    <div class="h2">Updates</div>
+    <div id="notifList"></div>
+  </div></div>
+
+  <!-- MESSAGES -->
+  <div class="view" id="view-messages"><div class="pad">
+    <div class="h2">Messages</div>
+    <div class="searchbar" style="margin-bottom:14px"><span>🔍</span><input placeholder="Search conversations" oninput="filterThreads(this.value)"></div>
+    <div id="threadList"></div>
+  </div></div>
+
+  <!-- PROFILE -->
+  <div class="view" id="view-profile"></div>
+
+  <!-- SEARCH MODAL -->
+  <div class="modal" id="modal-search">
+    <div class="modalhead"><button class="iconbtn" onclick="closeModal('modal-search')">←</button>
+      <input id="searchInput" placeholder="Search users, videos, hashtags, communities" oninput="doSearch(this.value)" style="flex:1;background:none;border:none;color:var(--text);font-size:15px;outline:none">
+    </div>
+    <div class="pad" id="searchBody"></div>
+  </div>
+
+  <!-- COMMUNITY DETAIL MODAL -->
+  <div class="modal" id="modal-comm">
+    <div class="modalhead"><button class="iconbtn" onclick="closeModal('modal-comm')">←</button><h3 id="commTitle"></h3></div>
+    <div class="pad" id="commDetail"></div>
+  </div>
+
+  <!-- MESSAGE THREAD MODAL -->
+  <div class="modal" id="modal-thread">
+    <div class="modalhead"><button class="iconbtn" onclick="closeModal('modal-thread')">←</button>
+      <span class="avatar" id="threadAvatar" style="width:28px;height:28px;font-size:12px"></span>
+      <h3 id="threadTitle"></h3>
+    </div>
+    <div class="pad" id="threadBody" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px"></div>
+    <div style="display:flex;gap:8px;padding:10px 16px;border-top:1px solid var(--line)">
+      <input type="text" id="threadInput" placeholder="Message..." style="flex:1;background:var(--card2);border:1px solid var(--line);border-radius:20px;padding:9px 14px;color:var(--text);outline:none" onkeydown="if(event.key==='Enter')sendMsg()">
+      <button class="pill red" style="padding:9px 18px" onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+
+  <!-- EDIT PROFILE MODAL -->
+  <div class="modal" id="modal-edit">
+    <div class="modalhead"><button class="iconbtn" onclick="closeModal('modal-edit')">←</button><h3>Edit profile</h3></div>
+    <div class="pad">
+      <div class="field"><label>Display name</label><input type="text" id="editName"></div>
+      <div class="field"><label>Username</label><input type="text" id="editUser"></div>
+      <div class="field"><label>Bio</label><textarea id="editBio"></textarea></div>
+      <button class="pill red" style="width:100%;padding:12px" onclick="saveProfile()">Save changes</button>
+    </div>
+  </div>
+
+  <!-- SETTINGS MODAL -->
+  <div class="modal" id="modal-settings">
+    <div class="modalhead"><button class="iconbtn" onclick="closeModal('modal-settings')">←</button><h3>Settings</h3></div>
+    <div class="pad">
+      <div class="card" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <span>Dark mode</span><input type="checkbox" id="darkToggle" onchange="toggleTheme(this.checked)">
+      </div>
+      <div class="card muted" style="margin-bottom:12px">Full authentication, storage, and account deletion require a connected backend (see project README).</div>
+      <button class="pill outline" style="width:100%;padding:11px" onclick="logout()">Log out</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+</div>
+
+<div id="nav">
+  <button class="navbtn active" data-v="home" onclick="switchView('home')"><span class="ic">🏠</span>Home</button>
+  <button class="navbtn" data-v="community" onclick="switchView('community')"><span class="ic">👥</span>Community</button>
+  <button class="navbtn" onclick="switchView('create')"><span class="createbtn">＋</span></button>
+  <button class="navbtn" data-v="updates" onclick="switchView('updates')"><span class="ic">🔔</span>Updates<span class="badge" id="navBadge" style="display:none"></span></button>
+  <button class="navbtn" data-v="messages" onclick="switchView('messages')"><span class="ic">✉️</span>Messages<span class="badge" id="msgBadge" style="display:none"></span></button>
+  <button class="navbtn" data-v="profile" onclick="switchView('profile')"><span class="ic">👤</span>Profile</button>
+</div>
+</div>
+
+<script>
+/*
+  AFFIX — single-file front-end prototype.
+  No demo accounts, users, or seeded content are included — every list below
+  starts empty and fills in as real people sign up, post, and interact.
+
+  Structure:
+    1. DEMO DATA        state arrays only (empty) — replace with API calls
+    2. STATE / STORAGE   localStorage helpers for theme/profile persistence
+    3. NAV / VIEWS        view switching, modals, toasts
+    4. HOME FEED           video feed rendering + like/save/follow/share
+    5. COMMUNITY            community list, join/leave, posts
+    6. CREATE               upload form + fake publish progress
+    7. UPDATES               notifications list
+    8. MESSAGES               conversations + chat thread
+    9. PROFILE                 profile view, edit, theme toggle
+   10. SEARCH                   global search across the data above
+   11. AUTH                      login/sign-up gate, session check
+
+  Every "// BACKEND:" comment marks a spot that needs a real API, storage
+  provider, or auth service before this goes to production.
+*/
+
+/* ---------------- SUPABASE CLIENT ---------------- */
+// Fill these in from Project Settings -> API in your Supabase dashboard.
+// The anon key is safe to expose client-side; Row Level Security (see
+// supabase_schema.sql) is what actually protects your data.
+const SUPABASE_URL = 'https://YOUR-PROJECT-REF.supabase.co';
+const SUPABASE_ANON_KEY = 'YOUR-ANON-PUBLIC-KEY';
+const db = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+let session = null; // populated on load / sign-in, cleared on sign-out
+
+/* ---------------- DEMO DATA ---------------- */
+const grads = ["linear-gradient(160deg,#3a0209,#F0233D)","linear-gradient(160deg,#0B0B0E,#8c1023)","linear-gradient(160deg,#F0233D,#1a1a1e)","linear-gradient(160deg,#4a0009,#c81c33)","linear-gradient(160deg,#1a1a1e,#F0233D)","linear-gradient(160deg,#630014,#0B0B0E)","linear-gradient(160deg,#F0233D,#3a0209)","linear-gradient(160deg,#2a2a2e,#8c1023)"];
+const avColors = ["#F0233D","#8c1023","#1a1a1e","#c81c33","#3a0209","#2a2a2e"];
+function colorFor(s){let h=0;for(const c of s)h=c.charCodeAt(0)+((h<<5)-h);return avColors[Math.abs(h)%avColors.length]}
+
+// BACKEND: replace with a fetch/query against your video service (e.g. GET /api/videos?feed=foryou|following)
+let videos = [];
+
+// BACKEND: community definitions can stay static or come from GET /api/communities.
+// "posts" per community should load from GET /api/communities/:id/posts — starts empty here.
+let communities = [
+ {id:1,name:"Football",desc:"Match days, transfer talk, five-a-side banter.",members:0,color:grads[3],joined:false,posts:[]},
+ {id:2,name:"Music",desc:"New drops, hidden gems, studio talk.",members:0,color:grads[4],joined:false,posts:[]},
+ {id:3,name:"Gaming",desc:"Clips, patch notes, squad finder.",members:0,color:grads[2],joined:false,posts:[]},
+ {id:4,name:"Education",desc:"Study tips, resources, exam season support.",members:0,color:grads[5],joined:false,posts:[]},
+ {id:5,name:"Technology",desc:"Builders, launches, hot takes on new tools.",members:0,color:grads[0],joined:false,posts:[]},
+ {id:6,name:"Comedy",desc:"Skits, memes, and things too real to laugh at.",members:0,color:grads[6],joined:false,posts:[]},
+ {id:7,name:"Fashion",desc:"Fits, drops, styling inspo.",members:0,color:grads[1],joined:false,posts:[]},
+ {id:8,name:"Art",desc:"Sketches, process videos, critique welcome.",members:0,color:grads[7],joined:false,posts:[]},
+ {id:9,name:"Business",desc:"Startups, side hustles, money talk.",members:0,color:grads[4],joined:false,posts:[]},
+ {id:10,name:"Sports",desc:"All sports, all leagues, all opinions.",members:0,color:grads[3],joined:false,posts:[]},
+];
+
+// BACKEND: replace with GET /api/notifications for the signed-in user.
+let notifications = [];
+
+// BACKEND: replace with the authenticated user's profile from GET /api/me.
+let me = {name:"Your Name",user:"yourhandle",bio:"",color:"#F0233D"};
+
+// BACKEND: replace with GET /api/conversations for the signed-in user.
+let threads = [];
+
+/* ---------------- STATE / STORAGE ---------------- */
+function ls(){try{return window.localStorage}catch(e){return null}}
+function saveState(){const s=ls();if(!s)return;try{
+  s.setItem('affix_theme',document.documentElement.getAttribute('data-theme')||'dark');
+  s.setItem('affix_me',JSON.stringify(me));
+  s.setItem('affix_recent',JSON.stringify(recentSearches));
+}catch(e){}}
+function loadState(){const s=ls();if(!s)return;
+  try{const t=s.getItem('affix_theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
+  try{const m=s.getItem('affix_me');if(m)me=JSON.parse(m);}catch(e){}
+  try{const r=s.getItem('affix_recent');if(r)recentSearches=JSON.parse(r);}catch(e){}
+}
+let recentSearches = [];
+loadState();
+
+/* ---------------- NAV / VIEWS ---------------- */
+function switchView(v){
+  document.querySelectorAll('.view').forEach(el=>el.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.v===v));
+  if(v==='community')renderCommunity();
+  if(v==='create')renderCreate();
+  if(v==='updates')renderUpdates();
+  if(v==='messages')renderMessages();
+  if(v==='profile')renderProfile('me');
+}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function openModal(id){document.getElementById(id).classList.add('open')}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast._t);toast._t=setTimeout(()=>t.classList.remove('show'),1800)}
+
+/* ---------------- HOME FEED ---------------- */
+let feedTab='foryou';
+let followingSet=new Set(); // ids of creators the current user follows, for the follow chip
+function setFeedTab(tab){feedTab=tab;document.querySelectorAll('#feedtabs div').forEach(d=>d.classList.toggle('active',d.dataset.feed===tab));loadVideos()}
+
+// Pulls from the videos_feed view (see supabase_schema.sql), then layers on
+// this viewer's own like/save/follow state with a couple of small queries.
+async function loadVideos(){
+  const feed=document.getElementById('feed');
+  feed.innerHTML='<div class="empty" style="padding-top:40%">Loading videos...</div>';
+
+  let query=db.from('videos_feed').select('*').eq('visibility','public').order('created_at',{ascending:false}).limit(20);
+
+  if(feedTab==='following'){
+    if(!session){videos=[];renderFeedList('Log in to see videos from creators you follow.');return}
+    const {data:follows}=await db.from('follows').select('followee_id').eq('follower_id',session.user.id);
+    const ids=(follows||[]).map(f=>f.followee_id);
+    followingSet=new Set(ids);
+    if(!ids.length){videos=[];renderFeedList('No videos yet. Follow creators to see their posts here.');return}
+    query=query.in('user_id',ids);
+  }
+
+  const {data,error}=await query;
+  if(error){console.error(error);renderFeedList('Could not load videos. Check your Supabase URL/key.');return}
+
+  let likedSet=new Set(), savedSet=new Set();
+  if(session && data.length){
+    const ids=data.map(v=>v.id);
+    const [{data:likes},{data:saves},{data:myFollows}]=await Promise.all([
+      db.from('video_likes').select('video_id').eq('user_id',session.user.id).in('video_id',ids),
+      db.from('video_saves').select('video_id').eq('user_id',session.user.id).in('video_id',ids),
+      db.from('follows').select('followee_id').eq('follower_id',session.user.id)
+    ]);
+    likedSet=new Set((likes||[]).map(r=>r.video_id));
+    savedSet=new Set((saves||[]).map(r=>r.video_id));
+    followingSet=new Set((myFollows||[]).map(r=>r.followee_id));
+  }
+
+  videos=data.map(v=>({
+    id:v.id, userId:v.user_id, user:v.username||'unknown',
+    following:followingSet.has(v.user_id),
+    cap:v.caption||'', tags:(v.hashtags||[]).map(h=>h.startsWith('#')?h:'#'+h).join(' '),
+    views:v.views||0, likes:v.like_count||0, comments:v.comment_count||0, shares:0,
+    liked:likedSet.has(v.id), saved:savedSet.has(v.id),
+    grad:grads[Math.abs(hashCode(v.id))%grads.length]
+  }));
+  renderFeedList();
+}
+function hashCode(s){let h=0;for(const c of String(s))h=c.charCodeAt(0)+((h<<5)-h);return h}
+function renderFeedList(emptyMsg){
+  const feed=document.getElementById('feed');feed.innerHTML='';
+  if(!videos.length){
+    feed.innerHTML='<div class="empty" style="padding-top:40%">'+(emptyMsg||'No videos yet. Be the first to post.')+'</div>';return
+  }
+  videos.forEach(v=>feed.appendChild(buildReel(v)));
+  setupAutoplay();
+}
+function renderFeed(){renderFeedList()} // kept as an alias so older calls elsewhere still work
+function fmt(n){if(n>=1000000)return (n/1000000).toFixed(1)+'M';if(n>=1000)return (n/1000).toFixed(1)+'K';return n}
+function buildReel(v){
+  const el=document.createElement('div');el.className='reel paused';el.dataset.id=v.id;
+  el.innerHTML=`
+    <div class="thumb" style="background:${v.grad}" onclick="togglePlay(this.parentElement)"><div class="playicon">▶</div></div>
+    <div class="sidebar">
+      <button onclick="toggleLike('${v.id}')"><span class="ic ${v.liked?'liked':''}">${v.liked?'❤️':'🤍'}</span><span class="cnt">${fmt(v.likes)}</span></button>
+      <button onclick="toast('Comments open the video detail view — build this next using the comments table')"><span class="ic">💬</span><span>${fmt(v.comments)}</span></button>
+      <button onclick="shareVideo('${v.id}')"><span class="ic">↗</span><span class="cnt">${fmt(v.shares)}</span></button>
+      <button onclick="toggleSave('${v.id}')"><span class="ic ${v.saved?'saved':''}">${v.saved?'🔖':'📑'}</span></button>
+    </div>
+    <div class="meta">
+      <div class="user"><span class="avatar" style="background:${colorFor(v.user)}">${v.user[0].toUpperCase()}</span>@${v.user}
+        <span class="followchip ${v.following?'on':''}" onclick="event.stopPropagation();toggleFollow('${v.id}')">${v.following?'Following':'Follow'}</span>
+      </div>
+      <div class="caption">${v.cap}</div>
+      <div class="tags">${v.tags}</div>
+      <div class="muted" style="margin-top:4px;color:#eee">${fmt(v.views)} views</div>
+    </div>`;
+  return el;
+}
+function togglePlay(reel){reel.classList.toggle('paused');reel.classList.toggle('playing')}
+function setupAutoplay(){
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      const r=e.target;
+      if(e.isIntersecting&&e.intersectionRatio>0.6){r.classList.add('playing');r.classList.remove('paused')}
+      else{r.classList.remove('playing');r.classList.add('paused')}
+    })
+  },{threshold:[0,0.6,1]});
+  document.querySelectorAll('.reel').forEach(r=>io.observe(r));
+}
+function findVid(id){return videos.find(v=>v.id===id)}
+function requireSession(){if(!session){toast('Log in to do that');return false}return true}
+
+async function toggleLike(id){
+  if(!requireSession())return;
+  const v=findVid(id);v.liked=!v.liked;v.likes+=v.liked?1:-1;renderFeedList(); // optimistic
+  const {error}=v.liked
+    ? await db.from('video_likes').insert({video_id:id,user_id:session.user.id})
+    : await db.from('video_likes').delete().eq('video_id',id).eq('user_id',session.user.id);
+  if(error){v.liked=!v.liked;v.likes+=v.liked?1:-1;renderFeedList();toast('Could not update like')}
+}
+async function toggleSave(id){
+  if(!requireSession())return;
+  const v=findVid(id);v.saved=!v.saved;renderFeedList();
+  const {error}=v.saved
+    ? await db.from('video_saves').insert({video_id:id,user_id:session.user.id})
+    : await db.from('video_saves').delete().eq('video_id',id).eq('user_id',session.user.id);
+  toast(error?'Could not update save':(v.saved?'Saved to your profile':'Removed from saved'));
+}
+async function toggleFollow(id){
+  if(!requireSession())return;
+  const v=findVid(id);const creatorId=v.userId;v.following=!v.following;renderFeedList();
+  const {error}=v.following
+    ? await db.from('follows').insert({follower_id:session.user.id,followee_id:creatorId})
+    : await db.from('follows').delete().eq('follower_id',session.user.id).eq('followee_id',creatorId);
+  toast(error?'Could not update follow':(v.following?'Following @'+v.user:'Unfollowed @'+v.user));
+}
+function shareVideo(id){
+  const v=findVid(id);
+  if(navigator.share){navigator.share({title:'AFFIX',text:v.cap,url:location.href}).catch(()=>{})}
+  else{navigator.clipboard?.writeText(location.href);toast('Link copied')}
+}
+
+/* ---------------- COMMUNITY ---------------- */
+function renderCommunity(filter){
+  const grid=document.getElementById('commgrid');grid.innerHTML='';
+  const list=communities.filter(c=>!filter||c.name.toLowerCase().includes(filter.toLowerCase()));
+  if(!list.length){grid.innerHTML='<div class="empty">No communities match your search.</div>';return}
+  list.forEach(c=>{
+    const el=document.createElement('div');el.className='commcard';
+    el.innerHTML=`<div class="commcover" style="background:${c.color}" onclick="openCommunity(${c.id})"></div>
+      <div class="commbody">
+        <div class="name" onclick="openCommunity(${c.id})">${c.name}</div>
+        <div class="desc">${c.desc}</div>
+        <div class="row"><span class="muted">${fmt(c.members)} members</span>
+          <button class="pill ${c.joined?'outline':'red'}" style="padding:5px 12px;font-size:12px" onclick="toggleJoin(${c.id})">${c.joined?'Joined':'Join'}</button>
+        </div></div>`;
+    grid.appendChild(el);
+  });
+}
+function filterCommunities(v){renderCommunity(v)}
+function toggleJoin(id){const c=communities.find(x=>x.id===id);c.joined=!c.joined;toast(c.joined?'Joined '+c.name:'Left '+c.name);renderCommunity();if(document.getElementById('modal-comm').classList.contains('open'))openCommunity(id)}
+function openCommunity(id){
+  const c=communities.find(x=>x.id===id);
+  document.getElementById('commTitle').textContent=c.name;
+  const body=document.getElementById('commDetail');
+  body.innerHTML=`<div class="commcover" style="background:${c.color};border-radius:14px;margin-bottom:12px"></div>
+    <p class="muted" style="margin-bottom:10px">${c.desc}</p>
+    <div style="display:flex;gap:10px;align-items:center;margin-bottom:16px">
+      <span class="muted">${fmt(c.members)} members</span>
+      <button class="pill ${c.joined?'outline':'red'}" onclick="toggleJoin(${c.id})">${c.joined?'Leave':'Join'}</button>
+    </div>
+    <div class="field"><input type="text" id="newPost" placeholder="Share something with ${c.name}..."></div>
+    <button class="pill red" style="margin-bottom:16px" onclick="addPost(${c.id})">Post</button>
+    <div class="sectionlabel">Discussion</div>
+    <div id="postList"></div>`;
+  renderPosts(c);
+  openModal('modal-comm');
+}
+function renderPosts(c){
+  const pl=document.getElementById('postList');pl.innerHTML='';
+  if(!c.posts.length){pl.innerHTML='<div class="empty">No posts yet. Be the first to start a discussion.</div>';return}
+  c.posts.forEach((p,i)=>{
+    const el=document.createElement('div');el.className='card';el.style.marginBottom='10px';
+    el.innerHTML=`<div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+      <span class="avatar" style="width:26px;height:26px;font-size:11px;background:${colorFor(p.u)}">${p.u[0].toUpperCase()}</span>
+      <b style="font-size:13px">@${p.u}</b></div>
+      <div style="font-size:14px;margin-bottom:8px">${p.t}</div>
+      <div style="display:flex;gap:16px;font-size:13px" class="muted">
+        <span onclick="likePost(${c.id},${i})" style="cursor:pointer">❤️ ${p.likes}</span>
+        <span>💬 ${p.comments}</span></div>`;
+    pl.appendChild(el);
+  });
+}
+function likePost(cid,i){const c=communities.find(x=>x.id===cid);c.posts[i].likes++;renderPosts(c)}
+function addPost(cid){
+  const v=document.getElementById('newPost').value.trim();if(!v)return;
+  const c=communities.find(x=>x.id===cid);
+  c.posts.unshift({u:me.user,t:v,likes:0,comments:0});
+  document.getElementById('newPost').value='';renderPosts(c);toast('Posted to '+c.name);
+}
+
+/* ---------------- CREATE ---------------- */
+let draftFile=null;
+function renderCreate(){
+  const sel=document.getElementById('commSelect');
+  sel.innerHTML='<option value="">None</option>'+communities.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+}
+function onFileChosen(e){
+  const f=e.target.files[0];if(!f)return;
+  if(!f.type.startsWith('video/')){toast('Please select a valid video file');return}
+  draftFile=f;
+  document.getElementById('dzIcon').textContent='🎞️';
+  document.getElementById('dzText').textContent='Preview ready: '+f.name;
+  document.getElementById('dropzone').style.background=grads[Math.floor(Math.random()*grads.length)];
+  document.getElementById('dropzone').style.color='#fff';
+}
+async function publishVideo(){
+  if(!requireSession())return;
+  if(!draftFile){toast('Select or record a video first');return}
+  const cap=document.getElementById('capInput').value.trim()||'New video';
+  const tagsRaw=document.getElementById('tagInput').value.trim();
+  const tags=tagsRaw?tagsRaw.split(/[,\s]+/).map(t=>t.replace(/^#/,'')).filter(Boolean):[];
+  const communityId=document.getElementById('commSelect').value||null;
+  const visibilityMap={'Public':'public','Followers only':'followers','Only me':'private'};
+  const visibility=visibilityMap[document.getElementById('visSelect').value]||'public';
+
+  const wrap=document.getElementById('progWrap'),bar=document.getElementById('progBar');
+  wrap.style.display='block';bar.style.width='10%';
+
+  // 1. Upload the raw file straight to Storage (bucket must exist — see README).
+  const ext=(draftFile.name.split('.').pop()||'mp4');
+  const path=`${session.user.id}/${Date.now()}.${ext}`;
+  const {error:upErr}=await db.storage.from('videos').upload(path,draftFile,{contentType:draftFile.type});
+  if(upErr){toast('Upload failed: '+upErr.message);wrap.style.display='none';return}
+  bar.style.width='70%';
+  const {data:pub}=db.storage.from('videos').getPublicUrl(path);
+
+  // 2. Insert the video row — RLS only lets you insert with your own user_id.
+  const {error:insErr}=await db.from('videos').insert({
+    user_id:session.user.id, video_url:pub.publicUrl, caption:cap,
+    hashtags:tags, community_id:communityId, visibility
+  });
+  bar.style.width='100%';
+  if(insErr){toast('Could not save video: '+insErr.message);wrap.style.display='none';return}
+
+  toast('Published! Your video is live.');
+  wrap.style.display='none';bar.style.width='0%';draftFile=null;
+  document.getElementById('capInput').value='';document.getElementById('tagInput').value='';
+  document.getElementById('dzIcon').textContent='🎬';document.getElementById('dzText').textContent='Tap to record or upload a video';
+  document.getElementById('dropzone').style.background='';document.getElementById('dropzone').style.color='';
+  switchView('home');loadVideos();
+}
+
+/* ---------------- UPDATES ---------------- */
+function renderUpdates(){
+  const box=document.getElementById('notifList');box.innerHTML='';
+  ['today','yesterday','earlier'].forEach(g=>{
+    const items=notifications.filter(n=>n.g===g);if(!items.length)return;
+    box.innerHTML+=`<div class="sectionlabel">${g[0].toUpperCase()+g.slice(1)}</div>`;
+    items.forEach(n=>{
+      box.innerHTML+=`<div class="notif ${!n.read?'unread':''}"><div class="nic">${n.icon}</div><div style="flex:1;align-self:center;font-size:14px">${n.text}</div></div>`;
+    });
+  });
+  notifications.forEach(n=>n.read=true);
+  updateBadge();
+}
+function updateBadge(){
+  const unread=notifications.filter(n=>!n.read).length;
+  const b=document.getElementById('navBadge');
+  if(unread>0){b.style.display='block';b.textContent=unread}else{b.style.display='none'}
+}
+updateBadge();
+
+/* ---------------- MESSAGES ---------------- */
+let activeThread=null;
+function renderMessages(filter){
+  const box=document.getElementById('threadList');box.innerHTML='';
+  const list=threads.filter(t=>!filter||t.user.toLowerCase().includes(filter.toLowerCase()));
+  if(!list.length){box.innerHTML='<div class="empty">No conversations found.</div>';return}
+  list.forEach(t=>{
+    const last=t.msgs[t.msgs.length-1];
+    box.innerHTML+=`<div class="notif ${t.unread?'unread':''}" onclick="openThread(${t.id})">
+      <span class="avatar" style="background:${colorFor(t.user)}">${t.user[0].toUpperCase()}</span>
+      <div style="flex:1;align-self:center;min-width:0">
+        <div style="font-weight:600;font-size:14px">@${t.user}</div>
+        <div class="muted" style="font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${last?(last.from==='me'?'You: ':'')+last.t:'Say hi 👋'}</div>
+      </div>
+      ${t.unread?`<span class="badge" style="position:static;align-self:center">${t.unread}</span>`:''}
+    </div>`;
+  });
+  updateMsgBadge();
+}
+function filterThreads(v){renderMessages(v)}
+function updateMsgBadge(){
+  const unread=threads.reduce((s,t)=>s+t.unread,0);
+  const b=document.getElementById('msgBadge');
+  if(unread>0){b.style.display='block';b.textContent=unread}else{b.style.display='none'}
+}
+function openThread(id){
+  activeThread=id;const t=threads.find(x=>x.id===id);t.unread=0;
+  document.getElementById('threadAvatar').style.background=colorFor(t.user);
+  document.getElementById('threadAvatar').textContent=t.user[0].toUpperCase();
+  document.getElementById('threadTitle').textContent='@'+t.user;
+  renderThreadBody(t);openModal('modal-thread');renderMessages();
+}
+function renderThreadBody(t){
+  const b=document.getElementById('threadBody');
+  b.innerHTML=t.msgs.map(m=>`<div style="align-self:${m.from==='me'?'flex-end':'flex-start'};max-width:75%;background:${m.from==='me'?'var(--red)':'var(--card2)'};color:${m.from==='me'?'#fff':'var(--text)'};padding:9px 13px;border-radius:16px;font-size:14px">${m.t}</div>`).join('');
+  b.scrollTop=b.scrollHeight;
+}
+function sendMsg(){
+  const inp=document.getElementById('threadInput');const v=inp.value.trim();if(!v||!activeThread)return;
+  const t=threads.find(x=>x.id===activeThread);
+  t.msgs.push({from:'me',t:v});inp.value='';renderThreadBody(t);renderMessages();
+}
+updateMsgBadge();
+
+/* ---------------- PROFILE ---------------- */
+let profileTab='videos';
+function renderProfile(who){
+  const isMe = who==='me';
+  const view=document.getElementById('view-profile');
+  const myVideos = videos.filter(v=>v.user===me.user || (isMe && v.user===me.user));
+  const likedV = videos.filter(v=>v.liked);
+  const savedV = videos.filter(v=>v.saved);
+  const followers = 4820, following = 312, totalLikes = videos.reduce((s,v)=>s+v.likes,0);
+  view.innerHTML=`
+    <div class="pad" style="padding-top:calc(16px + env(safe-area-inset-top,0px))">
+      <div style="display:flex;justify-content:flex-end;gap:10px" ${isMe?'':'style="display:none"'}>
+        ${isMe?'<button class="iconbtn" onclick="openModal(\'modal-settings\')">⚙️</button>':''}
+      </div>
+      <div class="pheader">
+        <div class="pavatar" style="background:${me.color}">${me.name[0]}</div>
+        <div style="font-weight:700;font-size:17px">${me.name}</div>
+        <div class="muted">@${me.user}</div>
+        <div style="font-size:13px;margin-top:8px;max-width:280px">${me.bio}</div>
+        <div class="stats">
+          <div><b>${myVideos.length}</b><span>Videos</span></div>
+          <div><b>${fmt(followers)}</b><span>Followers</span></div>
+          <div><b>${fmt(following)}</b><span>Following</span></div>
+          <div><b>${fmt(totalLikes)}</b><span>Likes</span></div>
+        </div>
+        <button class="pill outline" style="padding:9px 26px" onclick="openEdit()">Edit profile</button>
+      </div>
+    </div>
+    <div class="ptabs">
+      <button class="${profileTab==='videos'?'active':''}" onclick="setPTab('videos')">VIDEOS</button>
+      <button class="${profileTab==='liked'?'active':''}" onclick="setPTab('liked')">LIKED</button>
+      <button class="${profileTab==='saved'?'active':''}" onclick="setPTab('saved')">SAVED</button>
+    </div>
+    <div class="vgrid" id="pgrid"></div>`;
+  fillGrid(profileTab==='videos'?myVideos:profileTab==='liked'?likedV:savedV);
+  document.getElementById('darkToggle').checked = document.documentElement.getAttribute('data-theme')!=='light';
+}
+function setPTab(t){profileTab=t;renderProfile('me')}
+function fillGrid(list){
+  const g=document.getElementById('pgrid');g.innerHTML='';
+  if(!list.length){g.innerHTML='<div class="empty" style="grid-column:1/-1">Nothing here yet.</div>';return}
+  list.forEach(v=>{g.innerHTML+=`<div class="cell" style="background:${v.grad}"><span>${fmt(v.views)} views</span></div>`});
+}
+function openEdit(){
+  document.getElementById('editName').value=me.name;
+  document.getElementById('editUser').value=me.user;
+  document.getElementById('editBio').value=me.bio;
+  openModal('modal-edit');
+}
+function saveProfile(){
+  me.name=document.getElementById('editName').value.trim()||me.name;
+  me.user=document.getElementById('editUser').value.trim()||me.user;
+  me.bio=document.getElementById('editBio').value.trim();
+  saveState();closeModal('modal-edit');renderProfile('me');toast('Profile updated');
+}
+function toggleTheme(dark){document.documentElement.setAttribute('data-theme',dark?'dark':'light');saveState()}
+
+/* ---------------- SEARCH ---------------- */
+function openSearch(){openModal('modal-search');renderSearchIdle();document.getElementById('searchInput').focus()}
+function renderSearchIdle(){
+  const b=document.getElementById('searchBody');
+  b.innerHTML=`
+    ${recentSearches.length?`<div class="sectionlabel">Recent</div>${recentSearches.map(r=>`<div class="muted" style="padding:8px 0" onclick="doSearch('${r}');document.getElementById('searchInput').value='${r}'">${r}</div>`).join('')}`:''}
+    <div class="sectionlabel">Trending hashtags</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">${['#affix','#trending','#buildinpublic','#gaming','#fashion'].map(t=>`<span class="pill outline">${t}</span>`).join('')}</div>
+    <div class="sectionlabel">Trending communities</div>
+    ${communities.slice(0,3).map(c=>`<div class="notif" onclick="closeModal('modal-search');openCommunity(${c.id})"><div class="nic" style="background:${c.color}">👥</div><div style="align-self:center">${c.name} · ${fmt(c.members)} members</div></div>`).join('')}`;
+}
+function doSearch(q){
+  if(!q){renderSearchIdle();return}
+  if(q.length>2 && !recentSearches.includes(q)){recentSearches.unshift(q);recentSearches=recentSearches.slice(0,5);saveState()}
+  const b=document.getElementById('searchBody');const ql=q.toLowerCase();
+  const users=[...new Set(videos.map(v=>v.user))].filter(u=>u.toLowerCase().includes(ql));
+  const vids=videos.filter(v=>v.cap.toLowerCase().includes(ql)||v.tags.toLowerCase().includes(ql));
+  const comms=communities.filter(c=>c.name.toLowerCase().includes(ql));
+  b.innerHTML=`
+    ${users.length?`<div class="sectionlabel">Users</div>${users.map(u=>`<div class="notif"><span class="avatar" style="background:${colorFor(u)}">${u[0].toUpperCase()}</span><span style="align-self:center">@${u}</span></div>`).join('')}`:''}
+    ${comms.length?`<div class="sectionlabel">Communities</div>${comms.map(c=>`<div class="notif" onclick="closeModal('modal-search');openCommunity(${c.id})"><div class="nic" style="background:${c.color}">👥</div><span style="align-self:center">${c.name}</span></div>`).join('')}`:''}
+    ${vids.length?`<div class="sectionlabel">Videos</div>${vids.map(v=>`<div class="notif"><div class="nic" style="background:${v.grad}"></div><span style="align-self:center;font-size:13px">${v.cap}</span></div>`).join('')}`:''}
+    ${!users.length&&!comms.length&&!vids.length?'<div class="empty">No results found.</div>':''}
+  `;
+}
+
+/* ---------------- AUTH ---------------- */
+let authTab='login';
+function setAuthTab(tab){
+  authTab=tab;
+  document.getElementById('tabLogin').classList.toggle('active',tab==='login');
+  document.getElementById('tabSignup').classList.toggle('active',tab==='signup');
+  document.getElementById('fieldName').style.display=tab==='signup'?'block':'none';
+  document.getElementById('fieldUser').style.display=tab==='signup'?'block':'none';
+  document.getElementById('authSubmit').textContent=tab==='signup'?'Create account':'Log in';
+  document.getElementById('authSwitch').innerHTML=tab==='signup'?'Already on AFFIX? <b onclick="setAuthTab(\'login\')">Log in</b>':'New to AFFIX? <b onclick="setAuthTab(\'signup\')">Sign up</b>';
+  document.getElementById('authErr').textContent='';
+}
+async function submitAuth(){
+  const email=document.getElementById('authEmail').value.trim();
+  const pass=document.getElementById('authPass').value.trim();
+  const err=document.getElementById('authErr');
+  if(!email||!pass){err.textContent='Enter your email and password';return}
+
+  if(authTab==='signup'){
+    const name=document.getElementById('authName').value.trim();
+    const user=document.getElementById('authUser').value.trim().replace(/^@/,'');
+    if(!name||!user){err.textContent='Enter a display name and username';return}
+    const {data,error}=await db.auth.signUp({
+      email, password:pass,
+      options:{data:{display_name:name, username:user}} // read by the handle_new_user() trigger
+    });
+    if(error){err.textContent=error.message;return}
+    err.textContent='';
+    if(!data.session){ // email confirmation is on by default in Supabase
+      toast('Check your email to confirm your account, then log in.');
+      setAuthTab('login');
+      return;
+    }
+    session=data.session;await loadMyProfile();enterApp();
+  }else{
+    const {data,error}=await db.auth.signInWithPassword({email,password:pass});
+    if(error){err.textContent=error.message;return}
+    err.textContent='';
+    session=data.session;await loadMyProfile();enterApp();
+  }
+}
+async function loadMyProfile(){
+  if(!session)return;
+  const {data}=await db.from('profiles').select('*').eq('id',session.user.id).single();
+  if(data){me.name=data.display_name;me.user=data.username;me.bio=data.bio||'';saveState()}
+}
+function enterApp(){
+  document.getElementById('auth').classList.add('hidden');
+  document.getElementById('app').style.display='flex';
+  toast(session?'Welcome back to AFFIX':'Browsing as guest');
+  loadVideos();
+}
+async function logout(){
+  await db.auth.signOut();
+  session=null;
+  closeModal('modal-settings');
+  document.getElementById('app').style.display='none';
+  document.getElementById('auth').classList.remove('hidden');
+  setAuthTab('login');
+}
+
+/* ---------------- INIT ---------------- */
+// Keep `session` in sync with Supabase's own auth state (covers token refresh too).
+db.auth.onAuthStateChange((_event,newSession)=>{session=newSession});
+
+(async function init(){
+  const {data}=await db.auth.getSession();
+  if(data.session){
+    session=data.session;
+    await loadMyProfile();
+    document.getElementById('auth').classList.add('hidden');
+    document.getElementById('app').style.display='flex';
+  }
+  loadVideos(); // runs whether signed in or browsing as guest
+})();
+</script>
+</body>
+</html>
